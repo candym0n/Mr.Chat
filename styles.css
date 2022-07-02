@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  background-color: grey;
+}
+
+#chat {
+  height: 75%;
+  width: 50%;
+  background-color: white;
+  filter: drop-shadow(0.5em 10px 10px black);
+  transform: translateX(50%) translateY(25%);
+  overflow: scroll;
+}
+
+#heading {
+  font-size: 5vw;
+}
+
+hr {
+  width: 90%;
+  height: 0.2vw;
+  background-color: darkgrey;
+  border-radius: 25%;
+}
