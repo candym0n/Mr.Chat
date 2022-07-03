@@ -22,3 +22,19 @@ hr {
   background-color: darkgrey;
   border-radius: 25%;
 }
+
+#chats {
+  height: 50%;
+  width: 100%;
+  overflow: scroll;
+}
+
+#chatBoxForUser {
+  background-color: blue;
+  color: pink;
+  border-radius: 15%;
+  min-height: 15%;
+  width: 40%;
+  position: relative;
+  left: 60%;
+}
