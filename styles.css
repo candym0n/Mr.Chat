@@ -18,6 +18,7 @@ body {
 
 #heading {
   font-size: 5vw;
+  text-align: center;
 }
 
 hr {
@@ -49,4 +50,36 @@ hr {
   min-height: 15%;
   width: 40%;
   border-radius: 15%;
+}
+
+#loading > #inside {
+  width: 90px;
+  height: 90px;
+  background-color: grey;
+  border-radius: 100%;
+  transform: translateX(5px) translateY(5px);
+}
+
+#loading {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background:
+    linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  animation: load 1s infinite;
+}
+
+@keyframes load {
+  0% {
+    transform: rotateZ(0deg) translateX(0px);
+  }
+
+  50% {
+    transform: translateX(100%) rotateZ(180deg);
+  }
+  100%{
+    transform: rotateZ(360deg) translateX(0px);
+  }
 }
