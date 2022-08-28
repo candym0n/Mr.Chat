@@ -1,6 +1,8 @@
-var quetions = ['why', 'who', 'how', 'what', 'whose', 'which']
-var greetings = ['hi', 'hello', 'greetings']
-
+function start(){
+document.querySelector('#loading').style.display = 'none'
+var quetions = ['why', 'did','who', 'how', 'what', 'whose', 'which']
+var greetings = ['hi', 'howdy', 'hello', 'greetings']
+var hello = 0;
 function resize() {
   document.body.style.height = window.innerHeight + 'px';
   document.body.style.width = window.innerWidth + 'px';
@@ -28,7 +30,19 @@ function submitToMrChat(thing) {
 function processStuff(thing) {
   thing = thing.split(' ')
   if (include(thing, greetings)) {
+  	if(hello==1){
+    	say("Dude, stop saying that to me.")
+    }
+    if(hello==2){
+    	say("This is like the third time you said that to me.")
+    }
+    if(hello>3){
+    	say("COULD YOU PLEASE STOP SAYING HELLO???")
+    }
+    if(hello == 0){
     say("Hello")
+    }
+     hello+=1;
   }
   if (include(thing, quetions) || getLastLetter(thing) == '?' || thing[0] == 'are' && thing.length != 1 || thing[0] == 'is' && thing.length != 1 || thing[0] == 'will' && thing.length != 1 || thing[0] == 'can' && thing.length != 1) {
     var i = Math.round(Math.random());
@@ -54,11 +68,14 @@ function processStuff(thing) {
   if(wordIs(thing,'yes') || wordIs(thing,'nope') || wordIs(thing,'no')){
   	say('How come?')
   }
-  if(thing.length == 1 && thing[0] == 'because'){
+  console.log(thing)
+  if(thing.length == 1 && thing[0] == 'because'||thing[thing.length-1]=='because'){
   	say('Because.....what?')
   }
+if(thing[0] == 'because'){
+	say("Not a good enough reason.")
 }
-
+}
 function say(thing) {
   const chat = document.querySelector("#chats").appendChild(document.createElement('div'));
   setTimeout(function(){
@@ -91,4 +108,5 @@ function wordIs(thing,a){
 	if(thing.length == 1 && thing[0] == a){
   	return true;
   }
+}
 }
