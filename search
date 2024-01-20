@@ -1,0 +1,15 @@
+document.body.innerHTML = "";
+let input = document.body.appendChild(document.createElement("textarea"));
+let btn = document.body.appendChild(document.createElement("button"));
+btn.innerHTML = "Go!";
+btn.addEventListener("click", function(){
+	fetch("https://www.google.com/search?q=" + input.value).then(a=>a.text()).then(a=>{
+  	let win = window.open("","","width:500,height:500");
+    win.document.write(a);
+    win.document.title = "Google";
+  });
+});
+
+Compressed:
+
+document.body.innerHTML="";let input=document.body.appendChild(document.createElement("textarea")),btn=document.body.appendChild(document.createElement("button"));btn.innerHTML="Go!",btn.addEventListener("click",function(){fetch("https://www.google.com/search?q="+input.value).then(e=>e.text()).then(e=>{let t=window.open("","","width:500,height:500");t.document.write(e),t.document.title="Google"})});
